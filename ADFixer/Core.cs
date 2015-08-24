@@ -24,21 +24,20 @@ namespace ADFixer
             Console.Write("Password: ");
             Password = Console.ReadLine();
 
-            ctx = new PrincipalContext(ContextType.Domain, domainName);
-            ctx.ValidateCredentials(User, Password);
+            ctx = new PrincipalContext(ContextType.Domain, domainName, User, Password);              
 
             Password = "";
 
         }
 
-        public void ReadType<TYPE>() where TYPE : Principal
+        public void ReadGroup()
         {
             // Group Principal Searcher Creation
-            TYPE Access = new TYPE(ctx);
+            GroupPrincipal Access = new GroupPrincipal(ctx);
 
             PrincipalSearcher search = new PrincipalSearcher(Access);
 
-            foreach (TYPE iter in search.FindAll())
+            foreach (GroupPrincipal iter in search.FindAll())
             {
                 Console.WriteLine("{0} - {1}", iter.SamAccountName, iter.Name);
             }

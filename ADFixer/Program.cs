@@ -22,6 +22,7 @@ namespace ADFixer
 
             ADFixer.ReadAD NewAD = new ReadAD();
 
+            NewAD.ReadGroup();
             //Exit Program
             Console.WriteLine("Press Any Key To Exit...");
             Console.ReadKey();

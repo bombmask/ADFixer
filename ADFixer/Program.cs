@@ -19,13 +19,16 @@ namespace ADFixer
     {
         static void Main(string[] args)
         {
+            
+            System.Windows.Forms.Application.Run(new mainform());
+            
 
-            ADFixer.ReadAD NewAD = new ReadAD();
+            //ADFixer.ReadAD NewAD = new ReadAD();
 
-            NewAD.ReadGroup();
-            //Exit Program
-            Console.WriteLine("Press Any Key To Exit...");
-            Console.ReadKey();
+            //NewAD.ReadGroup();
+            ////Exit Program
+            //Console.WriteLine("Press Any Key To Exit...");
+            //Console.ReadKey();
 
             
         }
